@@ -72,6 +72,45 @@
         echo '<br><br>';
     }
 
+    $stmt = $db->prepare("SELECT * FROM clients WHERE firstName LIKE 'M%' ORDER BY firstName ASC");
+    if ($stmt->execute()) {
+        foreach ($stmt->fetchAll() as $value) {
+            echo '<p>';
+            echo 'Nom : ' . $value['firstName'] . ' Prénom : ' . $value['lastName'];
+            echo '</p>';
+        }
+
+        echo '<br><br>';
+    }
+
+
+    $stmt = $db->prepare("SELECT * FROM shows ORDER BY title ASC");
+    if ($stmt->execute()) {
+        foreach ($stmt->fetchAll() as $value) {
+            echo '<p>';
+            echo 'Spectacle par ' . $value['performer'] . ', le ' . $value['date'] . ' à ' . $value['startTime'] . '.';
+            echo '</p>';
+        }
+
+        echo '<br><br>';
+    }
+
+
+    $stmt = $db->prepare("SELECT * FROM clients");
+    if ($stmt->execute()) {
+        foreach ($stmt->fetchAll() as $value) {
+            echo '<p>';
+            echo 'Nom : ' . $value['firstName'] .
+                '<br> Prénom : ' . $value['lastName'] .
+                '<br> Date de naisscance : ' . $value['birthDate'] .
+                '<br> Carte de fidélité : ' . $value['card'] .
+                '<br> Numéro de carte : ' . $value['cardNumber'];
+            echo '</p>';
+        }
+
+        echo '<br><br>';
+    }
+
 ?>
 
 </body>
