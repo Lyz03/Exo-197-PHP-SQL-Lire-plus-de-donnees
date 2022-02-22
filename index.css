@@ -1,23 +1,19 @@
 body{
-    background: #ffe450;
+    background: #efefef;
     font-family: "Segoe UI", serif;
 }
 
 span{
-    color: seagreen;
+    color: #3e3e3e;
     font-weight: bold;
     font-size: 18px;
 }
 
 p{
-    color: darkgreen;
-    width: 220px;
+    color: #767676;
     padding-left: 20px;
 }
 
 body{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
     font-size: 12px;
 }
